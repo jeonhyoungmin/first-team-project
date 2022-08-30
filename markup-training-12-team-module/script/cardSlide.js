@@ -117,9 +117,6 @@ export default function cardSlide(Array, container, rightButton, leftButton ){
         currentIndex -= 1;
         });
 
-
-
-
 }
 
 
