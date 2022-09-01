@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const docInit = {
+      body : document.body,
+      root : document.createElement('div'),
+      pokemonDiv: document.createElement('div'),
+      pokemonImg: document.createElement('img')
+    }
+    const docStyling = {
+      size: function(element, width, height){
+        element.style.width = width;
+        element.style.height = height;
+      }
+    }
+    docInit.body.appendChild(docInit.root);
+    docInit.body.style.margin = '0px';
+    docInit.body.style.padding = '0px';
+    docInit.root.id = 'root';
+    // docInit.pokemonDiv.innerHTML = '1';
+    docStyling.size(docInit.root, '100vw', '100vh');
+
+    // // 포켓몬 api를 객체로 묶음
+    // const pokemonApiList = {
+    //   ability: 'ability',
+    //   berry: 'berry',
+    //   berryFirmness: 'berryFirmness',
+    //   berryFlavor: 'berryFlavor',
+    //   characterIstic: 'characterIstic',
+    //   contestEffect: 'contestEffect',
+    //   contestType: 'contestType',
+    //   eggGroup: 'eggGroup',
+    //   encounterCondition: 'encounterCondition',
+    //   encounterConditionValue: 'encounterConditionValue',
+    //   encounterMethod: 'encounterMethod',
+    //   evolutionChain: 'evolutionChain',
+    //   evolutionTrigger: 'evolutionTrigger',
+    //   gender: 'gender',
+    //   generation: 'generation',
+    //   growthRate: 'growthRate',
+    //   item: 'item',
+    //   itemAttribute: 'itemAttribute',
+    //   itemCategory: 'itemCategory',
+    //   itemFlingEffect: 'itemFlingEffect',
+    //   itemPocket: 'itemPocket',
+    //   language: 'language',
+    //   location: 'location',
+    //   locationArea: 'locationArea',
+    //   machine: 'machine',
+    //   move: 'move',
+    //   moveAilment: 'moveAilment',
+    //   moveBattleStyle: 'moveBattleStyle',
+    //   moveCategory: 'moveCategory',
+    //   moveDamageClass: 'moveDamageClass',
+    //   moveLearnMethod: 'moveLearnMethod',
+    //   moveTarget: 'moveTarget',
+    //   nature: 'nature',
+    //   palParkArea: 'palParkArea',
+    //   pokeathlonStat: 'pokeathlonStat',
+    //   pokedex: 'pokedex',
+    //   pokemon: 'pokemon',
+    //   pokemonColor: 'pokemonColor',
+    //   pokemonForm: 'pokemonForm',
+    //   pokemonHabitat: 'pokemonHabitat',
+    //   pokemonShape: 'pokemonShape',
+    //   pokemonSpecies: 'pokemonSpecies',
+    //   region: 'region',
+    //   stat: 'stat',
+    //   superContestEffect: 'superContestEffect',
+    //   type: 'type',
+    //   version: 'version',
+    //   versionGroup: 'versionGroup'
+    // }
+
+    // // pokemonApiList 객체의 키 값을 배열로 보여줌
+    // console.log(Object.keys(pokemonApiList));
+  
+
+    // console.log(apiCallingUrl);
+    // for ( let key in pokemonApiList) {
+    //   console.log(key);    
+    // }
+
+
+
+
+
+    // function a() {
+    //     for (let value in pokemonApiList ) {
+    //     console.log(`${pokemonApiList[value]}`)  
+    //   } 
+    // }
+
+    // a()
+
+
+    // function apicalling(pokemonApilist) {
+    //   const pokemonApiLIST = Object.keys(pokemonApiList);
+    //   // console.log(pokemonApiLIST)
+
+    //   const apiCallingUrl = `https://pokeapi.co/api/v2/`;
+
+    //   for (let i = 0; i < pokemonApiLIST.length; i++) {
+
+    //     let result = apiCallingUrl + (pokemonApiLIST[i]);
+
+    //     console.log(result);
+
+    //     // console.log(`${pokemonApiLIST[i]}`);
+        
+    //     // console.log(apiCallingUrl.concat(pokemonApiLIST[i]))
+
+
+    //     // console.log(apiCallingUrl.concat(`${pokemonApiLIST[1]}`))
+    //     // console.log(apiCallingUrl)
+    //     // console.log(pokemonApiLIST[i])   
+
+    //   }
+    
+    // }
+
+    // apicalling()
+
+    // 포켓몬 api를 객체로 묶음
+    const pokemonApiList = {
+      ability: 'ability',
+      berry: 'berry',
+      berryFirmness: 'berry-firmness',
+      berryFlavor: 'berry-flavor',
+      characterIstic: 'characteristic',
+      contestEffect: 'contest-effect',
+      contestType: 'contest-type',
+      eggGroup: 'egg-group',
+      encounterCondition: 'encounter-condition',
+      encounterConditionValue: 'encounter-condition-value',
+      encounterMethod: 'encounter-method',
+      evolutionChain: 'evolution-chain',
+      evolutionTrigger: 'evolution-trigger',
+      gender: 'gender',
+      generation: 'generation',
+      growthRate: 'growth-rate',
+      item: 'item',
+      itemAttribute: 'item-attribute',
+      itemCategory: 'item-category',
+      itemFlingEffect: 'item-fling-effect',
+      itemPocket: 'item-pocket',
+      language: 'language',
+      location: 'location',
+      locationArea: 'location-area',
+      machine: 'machine',
+      move: 'move',
+      moveAilment: 'move-ailment',
+      moveBattleStyle: 'move-battle-style',
+      moveCategory: 'move-category',
+      moveDamageClass: 'move-damage-class',
+      moveLearnMethod: 'move-learn-method',
+      moveTarget: 'move-target',
+      nature: 'nature',
+      palParkArea: 'pal-park-area',
+      pokeathlonStat: 'pokeathlon-stat',
+      pokedex: 'pokedex',
+      pokemon: 'pokemon',
+      pokemonColor: 'pokemon-color',
+      pokemonForm: 'pokemon-form',
+      pokemonHabitat: 'pokemon-habitat',
+      pokemonShape: 'pokemon-shape',
+      pokemonSpecies: 'pokemon-species',
+      region: 'region',
+      stat: 'stat',
+      superContestEffect: 'super-contest-effect',
+      type: 'type',
+      version: 'version',
+      versionGroup: 'version-group'
+    }  
+
+
+    // console.log(pokemonApiList);
+    // console.log(pokemonApiList.ability);
+
+    // console.log(Object.values(pokemonApiList))
+
+    // const pokemonL = [];
+
+
+    // function apiKey(key) {
+    //   for (let i = 0; i < pokemonApiList.length; i++) {
+    //     pokemonL.push(pokemonApiList.`${key}`);
+    //   }
+    // }
+
+    // apiKey()
+
+    // console.log(pokemonL);
+    
+
+    function url(type, count) {
+      
+      const _BASIC_URL = `https://pokeapi.co/api/v2/${type}/${count}`;
+      // const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
+      const request = new XMLHttpRequest();
+        request.open( 'GET' , _BASIC_URL);
+        request.responseType = "json";
+        request.send();
+        request.addEventListener('load', () => {
+          
+        const _POKEMON_API = request.response;
+        console.log(_POKEMON_API);
+        // console.log(_POKEMON_API.results);
+        // console.log(_POKEMON_API.results.length);
+      })
+
+      // for(let i = 0; i < pokemonL.length; i++) {
+      //   _BASIC_URL = pokemonApiList[i]
+      // }
+    }
+
+
+  url(pk);
+
+    // for (let key in apiCallingUrl) {
+    //   console.log(`${key}`);
+    // }
+
+
+
+    // const pokemonApiLIST = Object.keys(pokemonApiList);
+    // console.log(pokemonApiLIST)
+
+    // const apiCallingUrl = `https://pokeapi.co/api/v2/`;
+
+    // for (let i = 0; i < pokemonApiLIST.length; i++) {
+
+    //   let result = apiCallingUrl + (pokemonApiLIST[i]);
+
+    //   console.log(result);
+
+    //   // console.log(`${pokemonApiLIST[i]}`);
+      
+    //   // console.log(apiCallingUrl.concat(pokemonApiLIST[i]))
+
+
+    //   // console.log(apiCallingUrl.concat(`${pokemonApiLIST[1]}`))
+    //   // console.log(apiCallingUrl)
+    //   // console.log(pokemonApiLIST[i])   
+
+    // }
+
+    // const pokemonApiLIST = Object.keys(pokemonApiList);
+    // console.log(pokemonApiLIST)
+
+    // const apiCallingUrl = `https://pokeapi.co/api/v2/`;
+
+    // for (let i = 0; i < pokemonApiLIST.length; i++) {
+
+    //   apiCallingUrl.concat(pokemonApiLIST[i]);
+
+    //   console.log(apiCallingUrl.concat(pokemonApiLIST[i]))
+
+    //   // console.log(apiCallingUrl)
+    //   // console.log(pokemonApiLIST[i])   
+
+    // }
+
+    // console.log(apiCalling(pokemonApiList.ability))
+
+
+
+
+
+    // const _BASIC_URL = `https://pokeapi.co/api/v2/pokemon?limit=905/`;
+    //   const request = new XMLHttpRequest();
+    //     request.open( 'GET' , _BASIC_URL);
+    //     request.responseType = "json";
+    //     request.send();
+    //     request.addEventListener('load', () => {
+    //     const _POKEMON_API = request.response;
+    //     // console.log(_POKEMON_API);
+    //     // console.log(_POKEMON_API.results);
+    //     // console.log(_POKEMON_API.results.length);
+    //   })
+    // // 포켓몬 form (이미지) 를 전역변수로 선언
+    // const pokemonSpecies_URL = `https://pokeapi.co/api/v2/pokemon-species/`;
+    // const pokemonSpeciesRequest = new XMLHttpRequest();
+    //   request.open( 'GET' , pokemonSpecies_URL);
+    //   request.responseType = "json";
+    //   request.send();
+    //   request.addEventListener('load', () => {
+    //   const _POKEMON_API = request.response;
+    //   console.log(_POKEMON_API);
+    //   // 반복문의 조건식을 _POKEMON_API.count - 7 (898) 만큼 보다 작게 작성했다.
+    //   // 포켓몬의 front default(기본 앞모습)이미지를 pokemonForm 이라는 변수로 선언하여
+    //   // pokemonImg 태그의 소스 링크로 적용한다.
+    //   // 반복문으로 _POKEMON_API.count - 7 (898) 만큼 --> API 에는 905마리로 나와있지만 이미지가 있는 개체수는 899까지밖에 없다.
+    //   // pokemonDiv와 pokemonImg 가 생성되면서 기본 ${i+1} 순서 부터 이미지 요소가 들어간다.
+    //   for(let i = 0; i < _POKEMON_API.count - 7; i++) {
+    //     let root = document.getElementById('root');
+    //     let pokemonDiv = document.createElement('div');
+    //     let pokemonImg = document.createElement('img')
+    //     root.appendChild(pokemonDiv);
+    //     pokemonDiv.appendChild(pokemonImg);
+    //     docStyling.size(pokemonDiv, '20vw', '20vh');
+    //     docStyling.size(pokemonImg, '200px', '200px');
+    //     let pokemonForm = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png`
+    //     // console.log(pokemonForm);
+    //     pokemonImg.src = pokemonForm;
+    //     // pokemonimg.src = (`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i+1}.png`);
+    //   }
+    // })
+  </script>
+</body>
+</html>
